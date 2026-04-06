@@ -61,8 +61,9 @@ header * {
 
 
 .header_link_kover {
-    position: absolute;
-    right: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
     transition: all 0.3s ease;
 }
 
@@ -73,21 +74,20 @@ header * {
 
 .header_link_kover a {
     width: 100px;
-    color: snow;
+    display: inline-block;
+    color: #1e2a1a;
     text-decoration: none;
-    background: linear-gradient(
-        135deg,
-        #238f2b,
-        #6ab634    
-    );
-    padding: 5px 20px;
+    background: rgba(255, 255, 255, 0.554);
+    backdrop-filter: blur(4px);
+    padding: 5px 30px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 7px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 600;
     width: fit-content;
     border: none;
-
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.291);
 }
 
 /* ШАПКА ⤴ */
@@ -122,9 +122,6 @@ header * {
     #gallery_list {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 12px;
-    }
-    .header_link_kover {
-        top: 10px;
     }
     .header_text_container_gallery h3 {
         font-size: 25px;

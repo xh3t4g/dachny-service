@@ -1,14 +1,9 @@
 import { useParams ,Link } from "react-router-dom";
 import '../../css/service.css';
-import { useEffect } from "react";
 import { services } from "../../data/service";
+import { scrollToTop } from "../../utils/scrollToTop";
 
 export function ServicePage() {
-
-    useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, [])
-
     const { id } = useParams();
     const service = services.find(s => s.id === id);
     
@@ -69,7 +64,7 @@ export function ServicePage() {
 
         <div className="link_back">
             <nav>  
-                <Link to="/">Назад</Link>
+                <Link to="/" onClick={scrollToTop}>Назад</Link>
             </nav>
         </div>
 

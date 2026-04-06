@@ -1,15 +1,8 @@
 import '../css/index.css'
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { scrollToTop } from '../utils/scrollToTop'
 
 export function HomePage () {
-
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    })
 
     return <>
 
@@ -36,14 +29,13 @@ export function HomePage () {
 
                     <ul className='card_services_list trova_list'>
                         <li>
-                            <Link to="/service/kosim_travy">Косим траву</Link>
+                            <Link to="/service/kosim_travy" onClick={scrollToTop}>Косим траву</Link>
                         </li>
                         <li>Убираем траву</li>
                         <li>Вывозим мусор</li>
                         <li>Чистим участок</li>
                         <li>Подравниваение</li>
                         <li>Удаление сорняков</li>
-                        
                     </ul>
                 </div>
 
@@ -65,7 +57,10 @@ export function HomePage () {
 
             <div className="header_link_gallery">
                 <nav>  
-                    <Link to="/gallery">Наши работы</Link>
+                    <Link to="/gallery" onClick={() => setTimeout(() => window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    }), 50)}>Наши работы</Link>
                 </nav>
             </div>
 

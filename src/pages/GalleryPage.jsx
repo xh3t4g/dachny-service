@@ -2,13 +2,9 @@ import { images } from '../components/GalleryIMG'
 import { Card } from '../components/IMG_CARD'
 import '../css/gallery.css'
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { scrollToTop } from '../utils/scrollToTop'
 
 export function GalleryPage() {
-
-    useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, [])
 
     return <>
     
@@ -21,7 +17,7 @@ export function GalleryPage() {
 
             <div className="header_link_kover">
                 <nav>  
-                    <Link to="/">‹ Главное</Link>
+                    <Link to="/" onClick={scrollToTop}>‹ Главное</Link>
                 </nav>
             </div>
         </div>
