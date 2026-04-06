@@ -42,24 +42,23 @@ header * {
     padding: 40px 20px;
 }
 
-header h3 {
-    font-size: 44px;
-    font-family: 'Montserrat', sans-serif;
+.header_text_container_gallery h3 {
+    font-size: 35px;
+    font-family: 'Manrope', sans-serif;;
     color: aliceblue;
     font-weight: bold;
 }
 
-.header_text_container {
+.header_text_container_gallery {
     text-align: center;
+    background-color: rgba(250, 235, 215, 0.356);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 250, 250, 0.372);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 
-header span {
-    color: aliceblue;
-    font-size: 16px;
-    font-family: sans-serif;
-    font-weight: 600;
-}
 
 .header_link_kover {
     position: absolute;
@@ -72,7 +71,7 @@ header span {
     transform: translateX(-10px);
 }
 
-.header_link_kover button {
+.header_link_kover a {
     width: 100px;
     color: snow;
     text-decoration: none;
@@ -124,6 +123,13 @@ header span {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 12px;
     }
+    .header_link_kover {
+        top: 10px;
+    }
+    .header_text_container_gallery h3 {
+        font-size: 25px;
+    }
+
 }
 
 /* Телефон */
@@ -132,8 +138,8 @@ header span {
         grid-template-columns: 1fr;
         gap: 8px;
     }
-    .header_link_kover {
-        top: 10px;
+    .header_text_container_gallery h3 {
+        font-size: 25px;
     }
 }   
 

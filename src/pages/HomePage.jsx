@@ -1,6 +1,7 @@
 import '../css/index.css'
+import { Link } from 'react-router-dom'
 
-export function HomePage ({setCurrentPage}) {
+export function HomePage () {
 
     return <>
 
@@ -8,9 +9,9 @@ export function HomePage ({setCurrentPage}) {
         <div className="header_container">
             <div className="header_text_container">
                 <div className="Kavro_title_header">
-                    <span><h3>K</h3></span>
+                    <span><h3>ДАЧНЫЙ</h3></span>
 
-                    <h3>avro</h3>
+                    <h3>сервис</h3>
                 </div>
 
                 <span>Услуги в твоем районе</span>
@@ -54,7 +55,7 @@ export function HomePage ({setCurrentPage}) {
 
             <div className="header_link_gallery">
                 <nav>  
-                    <button onClick={() => setCurrentPage('gallery')} >Наши работы</button>
+                    <Link to="/gallery">Наши работы</Link>
                 </nav>
             </div>
 

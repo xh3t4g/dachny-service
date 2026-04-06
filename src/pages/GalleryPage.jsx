@@ -1,22 +1,27 @@
 import { images } from '../components/GalleryIMG'
 import { Card } from '../components/IMG_CARD'
 import '../css/gallery.css'
+import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
-export function GalleryPage({setCurrentPage}) {
+export function GalleryPage() {
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, [])
+
     return <>
     
             
     <header>
         <div className="header_container">
-            <div className="header_text_container">
-                <h3>Kavro</h3>
-
-                <span>⋆⋆ все наши работы ⋆⋆</span>
+            <div className="header_text_container_gallery">
+                <h3>⋆⋆ Результаты работ ⋆⋆</h3>
             </div>
 
             <div className="header_link_kover">
                 <nav>  
-                    <button onClick={() => setCurrentPage('home')}>‹ Главное</button>
+                    <Link to="/">‹ Главное</Link>
                 </nav>
             </div>
         </div>
