@@ -27,7 +27,9 @@ export function HomePage () {
                     <h3>🌿 Покос травы</h3></div>
 
                     <ul className='card_services_list trova_list'>
-                        <li>Косим траву</li>
+                        <li>
+                            <Link to="/service/kosim_travy">Косим траву</Link>
+                        </li>
                         <li>Убираем траву</li>
                         <li>Вывозим мусор</li>
                         <li>Чистим участок</li>
