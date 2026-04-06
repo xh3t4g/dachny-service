@@ -1,7 +1,15 @@
 import '../css/index.css'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export function HomePage () {
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    })
 
     return <>
 
