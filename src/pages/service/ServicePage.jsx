@@ -1,6 +1,8 @@
 import { useParams ,Link } from "react-router-dom";
 import '../../css/service.css';
 import { services } from "../../data/service";
+import { serviceSteps } from "../../data/service";
+import { serviceAbout } from "../../data/service";
 import { scrollToTop } from "../../utils/scrollToTop";
 
 export function ServicePage() {
@@ -27,7 +29,7 @@ export function ServicePage() {
                             <h3>👥 О нас</h3>
 
                             <p>
-                                {service.about}
+                                {serviceAbout}
                             </p>
                         </div>
                     </div>
@@ -52,7 +54,7 @@ export function ServicePage() {
                             <h3>⚙️ Как это работает</h3>
 
                             <ul className="service_list free_list">
-                                {service.steps.map(step => (
+                                {serviceSteps.map(step => (
                                     <li key={step}>{step}</li>
                                 ))}
                             </ul>
