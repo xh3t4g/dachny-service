@@ -27,7 +27,7 @@ main {
 
 /* ОСНОВНЫЕ НАСТРОЙКИ ⤴ */
 
-header * {
+header * { 
     margin: 0;
 }
 
@@ -140,19 +140,23 @@ header span {
 .card_container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 20px;
     gap: 10px;
 }
 
-.card_bild, .card_trova * {
+
+.Card_contact_us, .card_Services * {
     margin: 0;
 }
 
-.card_trova, .card_bild{
+
+
+.card_Services, .Card_contact_us{
     background-repeat: no-repeat;
     background-size: 100px 100px;
-    width: 420px;
+    width: 700px;
+    max-width: 1200px;
     background-color: rgba(255, 255, 255, 0.554);
     backdrop-filter: blur(4px);
     border-radius: 16px;
@@ -165,35 +169,41 @@ header span {
     flex-direction: column;
 }
 
-.card_trova {
+.Card_contact_us {
+    width: fit-content;
+    flex-shrink: 0;
+}
+
+.Card_contact_us a {
+    text-align: center;
+}
+
+.card_Services, .Card_contact_us {
     box-shadow: inset 0 0 60px rgba(16, 88, 0, 0.326);
 }
 
-.card_bild {
-    box-shadow: inset 0 0 60px rgba(88, 51, 0, 0.308);
-}
 
 
-
-.card_container_title_trova, .card_container_title_bild {
+.card_container_title_services, .card_container_title_contacts {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
+    border: 1px solid rgba(16, 88, 0, 0.11);
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.102);
+    padding: 0 10px;
 }
 
 
 
-.card_container_title_trova, .card_container_title_bild h3 {
+.card_container_title_services h3, .card_container_title_contacts h3 {
     margin: 0;
     line-height: 2;
+    font-weight: 500;
 }
 
-.card_container_title_trova {
+.card_container_title_services, .card_container_title_contacts {
     color: rgb(30, 49, 27);
-}
-
-.card_container_title_bild {
-    color: rgb(90, 59, 3);
 }
 
 
@@ -205,6 +215,22 @@ header span {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
+}
+
+.card_services_list_b {
+    list-style: none;
+    gap: 10px;
+    padding: 10px 0 4px 0;
+    margin: 8px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: start;
+}
+
+.card_services_list_b a {
+    display: block;
 }
 
  
@@ -229,7 +255,8 @@ header span {
     transform: translateY(-1px);
 }
 
-.trova_list li a {
+
+.services_list li a {
     display: block;
     width: 100%;
     height: 100%;
@@ -237,9 +264,8 @@ header span {
     color: #1e2a1a;
 }
  
-/* checkmark badge – green for trova */
-.trova_list li::before {
-    content: '✓';
+.services_list li::before {
+    content: '→';
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -253,43 +279,7 @@ header span {
     font-weight: 800;
     box-shadow: 0 2px 6px rgba(42, 140, 42, 0.35);
 }
- 
-/* checkmark badge – amber for bild */
-.bild_list li {
-    color: #2a1e08;
-}
- 
-.bild_list li::before {
-    content: '✓';
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #8b5a00, #d4820a);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 800;
-    box-shadow: 0 2px 6px rgba(139, 90, 0, 0.35);
-}
 
-
-
-
-
-
-.news {
-    position: relative;
-    bottom: 0;
-    left: 0;
-
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    padding: 10px;
-}
 
 
 .Telegram {
@@ -299,8 +289,8 @@ header span {
     font-weight: 700;
     background: linear-gradient(
         35deg,
-        #0a70cb,
-        #21a6de
+        #0a71cb,
+        #21a5de
     );
     border-radius: 7px;
     padding: 10px;
@@ -348,31 +338,21 @@ header span {
 
 @media (max-width: 780px) {
     .card_container {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
     }
     header h3 {
         font-size: 40px;
     }
-}
-
-@media (max-width: 600px){
-    .Phone , .WhatsApp, .Telegram  {
-        font-size: 12px;
+    .card_Services, .Card_contact_us {
+        width: 450px;
     }
 }
+
 
 @media (max-width: 500px) {
-    .news {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
-    .card_trova, .card_bild {
+    .card_Services, .Card_contact_us {
         width: 300px;
-    }
-    .header_link_gallery {
-        top: 15px;
     }
     .Phone , .WhatsApp, .Telegram  {
         font-size: 16px;
