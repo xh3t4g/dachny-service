@@ -1,16 +1,123 @@
-# React + Vite
+# Dachny Service
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сайт для реального малого бизнеса по обслуживанию участков —
+покос травы, вырубка деревьев, демонтаж и разнорабочие.
 
-Currently, two official plugins are available:
+Проект написан с нуля под конкретную задачу: дать клиенту
+понятную точку входа — узнать что делаем, как работаем,
+и быстро выйти на связь.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Демо
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[Открыть сайт](https://xh3t4g.github.io/dachny-service/)
 
-## Expanding the ESLint configuration
+Рекомендуется проверить:
+- страницу услуги: что входит / как это работает / о нас
+- галерею выполненных работ
+- адаптивное поведение на мобильном
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Возможности
+
+- каталог услуг с отдельной страницей для каждой
+- страница услуги рендерится динамически через `useParams` и `Array.find()`
+- данные вынесены в единый файл `service.js` — компоненты только рендерят
+- шаги работы и описание компании — общие константы, не дублируются
+- галерея с автоматической загрузкой изображений через `import.meta.glob`
+- `HashRouter` для корректной работы на GitHub Pages
+
+---
+
+## Технологический стек
+
+- React 
+- React Router (HashRouter)
+- Vite
+- JavaScript (ES6+)
+- CSS (без фреймворков)
+
+---
+
+## Структура проекта
+
+```text
+src/
+├── pages/
+│   ├── HomePage.jsx        # главная: список услуг + контакты
+│   ├── GalleryPage.jsx     # галерея выполненных работ
+│   └── service/
+│       └── ServicePage.jsx # страница конкретной услуги
+├── components/
+│   ├── IMG_CARD.jsx        # карточка фото в галерее
+│   └── GalleryIMG.js       # автозагрузка изображений (import.meta.glob)
+├── data/
+│   └── service.js          # данные: услуги, шаги работы, описание компании
+├── utils/
+│   └── scrollToTop.js      # утилита прокрутки при навигации
+└── css/
+    ├── index.css            # стили главной страницы
+    ├── service.css          # стили страницы услуги
+    └── gallery.css          # стили галереи
+```
+
+---
+
+## Как добавить новую услугу
+
+Достаточно добавить объект в массив `services` в файле `src/data/service.js`:
+
+```js
+{
+    id: 'vyvoz_musora',
+    title: '🗑️ Вывоз мусора',
+    includes: [
+        'Вывоз строительного мусора',
+        'Погрузка и транспортировка',
+        // ...
+    ]
+}
+```
+
+Страница создаётся автоматически по маршруту `/service/vyvoz_musora`.
+Шаги работы и блок «О нас» — общие для всех услуг, редактировать их не нужно.
+
+---
+
+## Установка
+
+```bash
+git clone https://github.com/xh3t4g/dachny-service.git
+cd dachny-service
+npm install
+npm run dev
+```
+
+---
+
+## Статус проекта
+
+Сайт задеплоен и используется в реальном бизнесе.
+
+Планируемые улучшения:
+- заполнить оставшиеся услуги
+- форма заявки с валидацией
+- оптимизация изображений в галерее
+
+---
+
+## Полученный опыт
+
+- проектирование структуры данных под реальную задачу
+- динамическая маршрутизация через `useParams` + `Array.find()`
+- разделение данных и представления
+- `import.meta.glob` для динамической загрузки ассетов
+- деплой на GitHub Pages через HashRouter
+
+---
+
+## Автор
+
+GitHub: [xh3t4g](https://github.com/xh3t4g)
