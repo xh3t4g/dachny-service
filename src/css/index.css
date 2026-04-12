@@ -2,22 +2,6 @@ body {
     margin: 0;
 }
 
-#root {
-    min-height: 100vh;
-    background: url("../assets/images/phon_img/pokos_travi_phon.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-
-    margin:0 auto;  
-    padding: 0;
-
-    display: flex;
-    flex-direction: column;
-    user-select: none;
-
-}
 
 
 

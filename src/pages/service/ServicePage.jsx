@@ -1,4 +1,4 @@
-import { useParams ,Link } from "react-router-dom";
+import { useParams ,Link, useNavigate } from "react-router-dom";
 import '../../css/service.css';
 import { services } from "../../data/service";
 import { serviceSteps } from "../../data/service";
@@ -7,7 +7,13 @@ import { scrollToTop } from "../../utils/scrollToTop";
 
 export function ServicePage() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const service = services.find(s => s.id === id);
+
+    if (!service) {
+        navigate('/')
+        return null;
+    }
     
     return <>
     
