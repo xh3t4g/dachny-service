@@ -31,11 +31,21 @@ export function HomePage () {
                         <li>
                             <Link to="/service/pokos_travi" onClick={scrollToTop}>🌿 Покос травы</Link>
                         </li>
-                        <li>🗑️ Вывоз мусора</li>
-                        <li>🧹 Чистка участка</li>
-                        <li>🪓 Вырубка деревьев</li>
-                        <li>🔨 Демонтаж</li>
-                        <li>🔧 Разнорабочие</li>
+                        <li>
+                            <Link to="/service/vyvoz_musora" onClick={scrollToTop}>🗑️ Вывоз мусора</Link>
+                        </li>
+                        <li>
+                            <Link to="/service/ochistka_ychastka" onClick={scrollToTop}>🧹 Чистка участка</Link>
+                        </li>
+                        <li>
+                            <Link to="/service/virybka_dereviev" onClick={scrollToTop}>🪓 Вырубка деревьев</Link>
+                        </li>
+                        <li>
+                            <Link to="/service/demontazh" onClick={scrollToTop}>🔨 Демонтаж</Link>
+                        </li>
+                        <li>
+                            <Link to="/service/raznorabochie" onClick={scrollToTop}>🔧 Разнорабочие</Link>
+                        </li>
                     </ul>
                 </div>
 
